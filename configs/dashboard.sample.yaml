@@ -1,0 +1,58 @@
+Stats: DayTime, DayGoal, WeekTime, WeekGoal, WeekDays, LastTime
+Leaf: Main
+  Leaf: Work pool
+    Link: https://docs.google.com/document/...
+  Leaf: Work pool
+    Link: https://docs.google.com/document/...
+Leaf: Other
+  Leaf: Daily
+    Leaf: Writing: Morning writing
+      DayGoal: 15
+      TitleRegex: Morning writing
+    Leaf: Writing: Novel
+      DayGoal: 15
+      Tags: novel
+    Leaf: Anki: English words
+      DayGoal: 2
+      TitleRegex: Repeating English Anki words
+    Leaf: French practice
+      DayGoal: 10
+      Tags: french
+    Leaf: Anki: Data Science
+      DayGoal: 5
+      TitleRegex: Study DS Anki deck
+  Leaf: Regular
+    Leaf: Book: Fiction
+      WeekGoal: 120
+      Tags: reading, book, fiction
+    Leaf: Book: Non-fiction
+      WeekGoal: 120
+      Tags: reading, book, nonfiction
+    Leaf: ML Studies: articles / tutorials
+      WeekGoal: 300
+      Tags: reading, machinelearning, article
+      Tags: reading, machinelearning, tutorial
+    Leaf: Course: Math/Stats
+      WeekGoal: 180
+      Tags: course, math
+    Leaf: Course/Practice: Data Science
+      WeekGoal: 180
+      Tags: course, datascience
+      Tags: practice, datascience
+    Leaf: Blog posts (Pocket)
+      Link: https://getpocket.com/a/queue/
+      WeekGoal: 120
+      Tags: pocket
+Leaf: Sometimes
+  Leaf: Coding practice
+    Tags: practice, programming
+  Leaf: Movies / Series
+    Tags: watching, movies
+    Tags: watching, series
+  Leaf: Learning about crypto
+    Tags: reading, crypto
+    Tags: watching, crypto
+    Tags: listening, crypto
+  Leaf: Games
+    Link: https://docs.google.com/document/...
+    Tags: gaming
