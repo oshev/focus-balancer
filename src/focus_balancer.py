@@ -2,6 +2,7 @@ import argparse
 
 from _datetime import datetime
 
+from src.dashboard import Dashboard
 from src.toggl import Toggl
 from src.tools import get_week_start
 
@@ -14,7 +15,10 @@ if __name__ == '__main__':
     toggl = Toggl(args.token)
     entries = toggl.get_entries(start_date=get_week_start(), end_date=datetime.now())
 
-    # TODO: Reading the config from YAML
+    dashboard = Dashboard()
+
+    for entry in entries:
+        dashboard.register_entry(entry)
 
     # TODO: Sorting Toggl entries into Category buckets based on the config
 
