@@ -14,8 +14,8 @@ class Toggl:
     def get_entries(self, start_date: datetime,
                     end_date: datetime = datetime.now()):
 
-        start_date_str = start_date.strftime(TOGGL_TIME_FORMAT.format(TOGGL_TIME_FORMAT))
-        end_date_str = end_date.strftime(TOGGL_TIME_FORMAT.format(TOGGL_TIME_FORMAT))
+        start_date_str = start_date.strftime(TOGGL_TIME_FORMAT)
+        end_date_str = end_date.strftime(TOGGL_TIME_FORMAT)
 
         response = requests.get(TOGGL_URL_TEMPLATE.format(start_date_str, end_date_str),
                                 auth=(self.api_token, 'api_token'))
