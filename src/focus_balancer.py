@@ -1,8 +1,7 @@
 import argparse
-
 from _datetime import datetime
 
-from src.dashboard import Dashboard
+from src.dashboard_config import DashboardConfig
 from src.toggl import Toggl
 from src.tools import get_week_start
 
@@ -15,7 +14,7 @@ if __name__ == '__main__':
     toggl = Toggl(args.token)
     entries = toggl.get_entries(start_date=get_week_start(), end_date=datetime.now())
 
-    dashboard = Dashboard()
+    dashboard = DashboardConfig()
 
     for entry in entries:
         dashboard.register_entry(entry)
