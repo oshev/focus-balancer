@@ -4,14 +4,8 @@ A command-line tool, which helps your define your focus areas and easily monitor
 Define the structure of your dashboard in `configs/dashboard.yaml` (See example in `dashboard.yaml`)
 
 Details:
-- `Stats` allows you to choose which statistics to show for your leaf categories on the dashboard and in which order.
-    - DayTime - time you spent on the leaf category today.
-    - DayGoal - minimum time you want to spend on this category per day.
-    - WeekTime - time you spent on the leaf category this week.
-    - WeekGoal - minimum time you want to spend on this category per week.
-    - WeekDays - how many days you did anything for this category this week.
-    - LastTime - last time (this week) you touched this category.
-- `Leaf` indicates a new leaf category in the dashboard tree.
+- `- NAME:` indicates a new category in the dashboard tree.
+- `- Leaf:` indicates a new leaf in the dashboard tree.
     - `Link` indicates to add a URL anchor to the leaf.
     - `DayGoal` defines minimum time you want to spend on this category per day.
     - `WeekGoal` defines minimum time you want to spend on this category per week.
@@ -22,7 +16,7 @@ Details:
     - In case both `Tags` and `TitleRegex` are defined, then both conditions must be true to attribute an entry to this category.  
 
 
-**Warning**: The tool is still in active development. See TODO list in `src/focus_balancer.py`.
+**Warning**: The tool is still in active development. See TODO entries in `src/focus_balancer.py`.
 
 Get your Toggle API Token from your [Toggle profile page](https://toggl.com/app/profile) (in the bottom)
 
