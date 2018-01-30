@@ -19,6 +19,7 @@ if __name__ == '__main__':
     for entry in entries:
         dashboard.register_entry(entry)
 
+    print("Finished")
     # TODO: Sorting Toggl entries into Category buckets based on the config
 
     # TODO: Scratch off completed categories

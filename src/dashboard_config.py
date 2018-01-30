@@ -1,6 +1,8 @@
 import yaml
 
 from src.dashboard_node import DashboardNode, NodeType
+from src.toggl import TogglEntry
+from src.tools import get_week_start, get_day_start
 
 FIELD_NAME = 'Leaf'
 FIELD_LINK = 'Link'
@@ -17,13 +19,14 @@ class DashboardConfig:
 
     def __init__(self, dashboard_config_path=DASHBOARD_CONFIG_PATH):
         super().__init__()
-        self._load_configuration(dashboard_config_path)
-
-    def _load_configuration(self, dashboard_config_path) -> None:
-        config_yaml_stream = open(dashboard_config_path, "r")
-        self.config_root = yaml.load(config_yaml_stream)
+        self.config_root = self._load_configuration(dashboard_config_path)
         self.tree_root = self._parse_config_node(self.config_root)  # keeps hierarchical structure
         self.tree_leafs_list = self.tree_root.sub_nodes_list()  # flatten, for faster checking the leafs
+
+    @staticmethod
+    def _load_configuration(dashboard_config_path) -> object:
+        config_yaml_stream = open(dashboard_config_path, "r")
+        return yaml.load(config_yaml_stream)
 
     @staticmethod
     def _get_field_or_none(leaf_dict: dict, field_name: str):
@@ -63,7 +66,15 @@ class DashboardConfig:
                                      week_goal=week_goal, title_regex=title_regex, tags=tags)
 
     def register_entry(self, toggl_entry: dict) -> None:
-        pass
+        week_start = get_week_start()
+        day_start = get_day_start()
+        for leaf in self.tree_leafs_list:
+            entry = TogglEntry(toggl_entry)
+            if leaf.match_title(entry.title) and leaf.match_tags(entry.tags):
+                leaf.update_stats(entry.start_datetime,
+                                  entry.stop_datetime,
+                                  entry.duration,
+                                  week_start, day_start)
 
     def generate_html(self) -> str:
         pass

@@ -5,6 +5,25 @@ import requests
 
 TOGGL_URL_TEMPLATE = "https://www.toggl.com/api/v8/time_entries?start_date={}&end_date={}"
 TOGGL_TIME_FORMAT = "%Y-%m-%dT%H:%M:00Z"
+TOGGL_ENTRY_TIME_FORMAT = "%Y-%m-%dT%H:%M:%S+00:00"  # 2018-01-29T08:10:49+00:00
+
+
+class TogglEntry:
+    def __init__(self, entry):
+        if "description" in entry:
+            self.title = entry["description"]
+        else:
+            self.title = None
+        if "tags" in entry:
+            self.tags = entry["tags"]
+        else:
+            self.tags = None
+        self.start_datetime = datetime.strptime(entry["start"], TOGGL_ENTRY_TIME_FORMAT)
+        if "stop" in entry:
+            self.stop_datetime = datetime.strptime(entry["stop"], TOGGL_ENTRY_TIME_FORMAT)
+        else:
+            self.stop_datetime = datetime.now()
+        self.duration = entry["duration"]
 
 
 class Toggl:
