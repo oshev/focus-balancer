@@ -58,8 +58,10 @@ class DashboardNode:
         return re.match(self.title_regex, title) is not None
 
     def match_tags(self, tags_list):
-        if self.tag_sets is None or tags_list is None:
+        if self.tag_sets is None:
             return True
+        if tags_list is None:
+            return False
         input_tags_set = set(tags_list)
         for tags_set in self.tag_sets:
             if tags_set.issubset(input_tags_set):

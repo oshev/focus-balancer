@@ -43,7 +43,7 @@ class DashboardConfig:
         tag_sets = []
         for tag_group in tag_groups:
             tag_sets.append({tag.strip() for tag in tag_group.split(",")})
-        return tag_sets
+        return tag_sets if len(tag_sets) > 0 else None
 
     def _parse_config_node(self, config_node) -> DashboardNode:
         if type(config_node) == dict:
