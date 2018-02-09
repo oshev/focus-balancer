@@ -22,6 +22,5 @@ Get your Toggle API Token from your [Toggle profile page](https://toggl.com/app/
 
 Run the tool: `python3 focus_balancer.py --token YOUR_TOGGL_API_TOKEN`
 
-
 Focus Balancer will generate an HTML dashboard and save it in `focus_balancer.html`
     

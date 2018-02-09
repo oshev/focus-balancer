@@ -14,3 +14,11 @@ class TestDashboardNode:
     def test_match_tags_empty(self):
         node = DashboardNode(NodeType.LEAF, tags=[])
         assert node.match_tags(["english", "exercise", "writing"]) is not True
+
+    def test_update_stats(self):
+        # TODO
+        pass
+
+    def test_sub_nodes_list(self):
+        # TODO
+        pass

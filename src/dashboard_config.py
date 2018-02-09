@@ -1,5 +1,6 @@
 import yaml
 
+from src import html_generator
 from src.dashboard_node import DashboardNode, NodeType
 from src.toggl import TogglEntry
 from src.tools import get_week_start, get_day_start
@@ -77,4 +78,4 @@ class DashboardConfig:
                                   week_start, day_start)
 
     def generate_html(self) -> str:
-        pass
+        return html_generator.get_html(self.tree_root)

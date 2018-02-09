@@ -13,8 +13,8 @@ class DashboardNode:
                  day_goal: int=None, week_goal: int=None, title_regex: str=None, tags: list=None):
         self.node_type = node_type
         self.name = name
+        self.link = link
         if node_type == NodeType.LEAF:
-            self.link = link
             self.day_goal = day_goal
             self.week_goal = week_goal
             self.title_regex = title_regex

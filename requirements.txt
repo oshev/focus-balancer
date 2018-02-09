@@ -3,3 +3,4 @@ argparse
 dateutil
 pytest
 pyyaml
+yattag
