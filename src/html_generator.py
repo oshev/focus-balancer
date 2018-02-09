@@ -11,10 +11,10 @@ def _build_leaf_text(tag_method, text_method, leaf: DashboardNode) -> None:
     day_goal_secs = leaf.day_goal * 60 if leaf.day_goal is not None else 0
     week_goal_secs = leaf.week_goal * 60 if leaf.week_goal is not None else 0
 
-    text = "{name}: D:{time_today}/{day_goal} W:{time_week}/{week_goal}"\
+    text = "{name}: D: {time_today}/{day_goal} W: {time_week}/{week_goal}"\
         .format(name=leaf.name,
-                time_today=secs_to_str(leaf.day_time), day_goal=day_goal_secs,
-                time_week=secs_to_str(leaf.week_time), week_goal=week_goal_secs)
+                time_today=secs_to_str(leaf.day_time), day_goal=secs_to_str(day_goal_secs),
+                time_week=secs_to_str(leaf.week_time), week_goal=secs_to_str(week_goal_secs))
     if leaf.day_time >= day_goal_secs > 0:
         with tag_method("strike"):
             text_method(text)
