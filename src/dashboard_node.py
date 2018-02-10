@@ -14,11 +14,11 @@ class DashboardNode:
         self.node_type = node_type
         self.name = name
         self.link = link
+        self.tag_sets = tags
+        self.title_regex = title_regex
         if node_type == NodeType.LEAF:
             self.day_goal = day_goal
             self.week_goal = week_goal
-            self.title_regex = title_regex
-            self.tag_sets = tags
 
             self.day_time = 0
             self.week_time = 0
@@ -26,6 +26,21 @@ class DashboardNode:
             self.last_time = None
         else:
             self.children = children
+
+    def has_stats(self):
+        return self.tag_sets is not None or self.title_regex is not None
+
+    def have_children_stats(self):
+        if self.children is not None and len(self.children) > 0:
+            return True in {child.has_stats() for child in self.children}
+        else:
+            return False
+
+    def have_children_leafs(self):
+        if self.children is not None and len(self.children) > 0:
+            return True in {child.node_type == NodeType.LEAF for child in self.children}
+        else:
+            return False
 
     def __repr__(self) -> str:
         if self.node_type == NodeType.LEAF:

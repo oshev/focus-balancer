@@ -71,7 +71,7 @@ class DashboardConfig:
         day_start = get_day_start()
         for leaf in self.tree_leafs_list:
             entry = TogglEntry(toggl_entry)
-            if leaf.match_title(entry.title) and leaf.match_tags(entry.tags):
+            if leaf.has_stats() and leaf.match_title(entry.title) and leaf.match_tags(entry.tags):
                 leaf.update_stats(entry.start_datetime,
                                   entry.stop_datetime,
                                   entry.duration,
