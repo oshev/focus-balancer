@@ -15,12 +15,9 @@ Details:
         - Several `TitleRegex` lines will be treated as OR (same as for `Tags`).
     - In case both `Tags` and `TitleRegex` are defined, then both conditions must be true to attribute an entry to this category.  
 
-
-**Warning**: The tool is still in active development. See TODO entries in `src/focus_balancer.py`.
-
 Get your Toggle API Token from your [Toggle profile page](https://toggl.com/app/profile) (in the bottom)
 
-Run the tool: `python3 focus_balancer.py --token YOUR_TOGGL_API_TOKEN`
+Run the tool: `python3 src/focus_balancer.py --token YOUR_TOGGL_API_TOKEN`
 
 Focus Balancer will generate an HTML dashboard and save it in `focus_balancer.html`
     

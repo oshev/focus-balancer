@@ -1,11 +1,13 @@
 import argparse
+import os
+import sys
 from _datetime import datetime
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 
 from src.dashboard_config import DashboardConfig
 from src.toggl import Toggl
 from src.tools import get_week_start
-import os
-
 
 project_dir = os.path.join(os.path.dirname(__file__), os.pardir)
 
