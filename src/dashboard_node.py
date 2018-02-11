@@ -70,6 +70,9 @@ class DashboardNode:
     def match_title(self, title: str) -> bool:
         if self.title_regex is None:
             return True
+        if title is None:
+            print("Warning: An entry with empty title")
+            return False
         return re.match(self.title_regex, title) is not None
 
     def match_tags(self, tags_list):
