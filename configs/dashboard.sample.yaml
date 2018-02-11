@@ -4,7 +4,7 @@ Leaves:
       Link: "https://docs.google.com/document/..."
     - Leaf: "Personal pool"
       Link: "https://docs.google.com/document/..."
-  - Other:
+ - Other:
     - Daily:
         - Leaf: "Writing: Morning writing"
           DayGoal: 15
@@ -49,13 +49,13 @@ Leaves:
         Tags: practice, programming
       - Leaf: Movies / Series
         Tags:
-          - watching, movies
+          - watching, movie
           - watching, series
       - Leaf: "Learning about crypto"
         Tags:
-          - reading, crypto
-          - watching, crypto
-          - listening, crypto
+          - reading, cryptocurrencies
+          - watching, cryptocurrencies
+          - listening, cryptocurrencies
       - Leaf: "Games"
-        Link: "https://docs.google.com/document/..."
+        Link: "https://docs.google.com/document/d/..."
         Tags: gaming
