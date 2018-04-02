@@ -99,6 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
-.idea/*
+.idea
 configs/dashboard.yaml
 focus.html
