@@ -1,7 +1,7 @@
 from yattag import Doc
 
-from src.dashboard_node import DashboardNode, NodeType
-from src.tools import secs_to_str, weekdays_str, EmptyContext
+from focus_balancer.dashboard_node import DashboardNode, NodeType
+from focus_balancer.tools import secs_to_str, weekdays_str, EmptyContext
 
 HTML_STYLE = """
 table, th, td {

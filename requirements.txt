@@ -1,6 +1,6 @@
 requests
 argparse
-dateutil
+python-dateutil
 pytest
 pyyaml
 yattag

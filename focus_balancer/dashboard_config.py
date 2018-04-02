@@ -1,9 +1,9 @@
 import yaml
 
-from src import html_generator
-from src.dashboard_node import DashboardNode, NodeType
-from src.toggl import TogglEntry
-from src.tools import get_week_start, get_day_start
+from focus_balancer import html_generator
+from focus_balancer.dashboard_node import DashboardNode, NodeType
+from focus_balancer.toggl import TogglEntry
+from focus_balancer.tools import get_week_start, get_day_start
 
 FIELD_NAME = 'Leaf'
 FIELD_LINK = 'Link'

@@ -1,4 +1,4 @@
-from src.dashboard_node import DashboardNode, NodeType
+from focus_balancer.dashboard_node import DashboardNode, NodeType
 
 
 class TestDashboardNode:
